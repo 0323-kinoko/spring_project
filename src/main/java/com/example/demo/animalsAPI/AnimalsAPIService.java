@@ -23,11 +23,11 @@ public class AnimalsAPIService {
 
 	}
 
-	public List<AnimalsAPIData> picAnimals(String pic) throws IOException {
+	public List<AnimalsAPIData> picAnimals(String animalId) throws IOException {
 
-		AnimalsAPIData[] picList = animalsAPIRepository.picAnimals(pic);
+		AnimalsAPIData[] animalDetail = animalsAPIRepository.picAnimals(animalId);
 
-		return Arrays.asList(picList);
+		return Arrays.asList(animalDetail);
 
 	}
 

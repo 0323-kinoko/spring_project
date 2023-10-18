@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.demo.animalsAPI.AnimalsAPIData;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Repository
@@ -42,9 +41,9 @@ public class AnimalsAPIRepository {
 
 		ObjectMapper mapper = new ObjectMapper();
 
-		AnimalsAPIData[] picList = mapper.readValue(json, AnimalsAPIData[].class);
+		AnimalsAPIData[] animalDetail = mapper.readValue(json, AnimalsAPIData[].class);
 
-		return picList;
+		return animalDetail;
 
 	}
 

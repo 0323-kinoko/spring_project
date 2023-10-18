@@ -27,14 +27,16 @@ public class AnimalsAPIController {
 
 		return "animalsAPI.html";
 
+		
+		
 	}
 
 	@PostMapping("/animalsSearch")
-	public String picPets(@RequestParam("pic") String pic, Model model) throws IOException {
+	public String picPets(@RequestParam("animalId") String animalId, Model model) throws IOException {
 
-		List<AnimalsAPIData> picList = animalsAPIService.picAnimals(pic);
+		List<AnimalsAPIData> animalDetail = animalsAPIService.picAnimals(animalId);
 
-		model.addAttribute("picList", picList);
+		model.addAttribute("animalDetail", animalDetail);	
 
 		return "animalsResult.html";
 

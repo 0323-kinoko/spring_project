@@ -11,17 +11,17 @@ import com.example.demo.calculator.service.CalculatorService;
 @Controller
 public class CalculatorController {
 
-	@GetMapping("/calculator")
-	public String showCalculator() {
-		return "calculator";
-	}
-
 	private final CalculatorService calculatorService;
 
 	public CalculatorController(CalculatorService calculatorService) {
 		this.calculatorService = calculatorService;
 	}
-
+	
+	@GetMapping("/calculator")
+	public String showCalculator() {
+		return "calculator";
+	}
+	
 	@PostMapping("/calculate")
 	public String calculator(@RequestParam("num1") int num1, @RequestParam("num2") int num2,
 			@RequestParam("cal") String option, Model model) {
